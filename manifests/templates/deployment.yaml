@@ -1,0 +1,26 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hyy-4e92e7f3
+  labels:
+    app: hyy-4e92e7f3
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: hyy-4e92e7f3
+  template:
+    metadata:
+      labels:
+        app: hyy-4e92e7f3
+    spec:
+      serviceAccountName: ingress-manager
+      containers:
+        - name: hyy-4e92e7f3
+          image: docker.io/phengbunath/hyy-4e92e7f3:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
